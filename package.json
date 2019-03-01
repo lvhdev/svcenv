@@ -1,0 +1,40 @@
+{
+  "name": "@lifeio/svcenv",
+  "version": "0.0.0",
+  "description": "Simple cli for prepping the env for a run of a life.io service.",
+  "engines": {
+    "node": ">=8.x.x",
+    "npm": "~6.4.1"
+  },
+  "main": "index.js",
+  "bin": {
+    "svcenv": "index.js"
+  },
+  "scripts": {
+    "dev": "nodemon --signal SIGHUP --exec 'npm run --silent lint && node test/srv.js'",
+    "lint": "eslint index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvhdev/svcenv.git"
+  },
+  "keywords": [
+    "AWS",
+    "S3",
+    "SecretsManager"
+  ],
+  "author": "Howard Engelhart",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.412.0",
+    "debug": "^4.1.1",
+    "fs-extra": "^7.0.1",
+    "minimist": "^1.2.0",
+    "needle": "^2.2.4"
+  }
+}
