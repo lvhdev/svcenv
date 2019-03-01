@@ -187,14 +187,21 @@ async function getNodeId(serviceName) {
 
     if (process.env.ECS_CONTAINER_METADATA_URI) {
       const r = await needle('get', process.env.ECS_CONTAINER_METADATA_URI);
-      if (r.body.TaskARN) {
-        const m = r.body.TaskARN.match(/arn:aws:ecs:.*task\/(.*)$/);
+      debug('getNodeId metadata:', r.body);
+      const arn = r.body && r.body.Labels && r.body.Labels['com.amazonaws.ecs.task-arn'];
+      if ( arn ){
+        const m = arn.match(/arn:aws:ecs:.*task\/(.*)$/);
         if (m[1]) {
           return `${serviceName}-${m[1].substr(0, 8)}`;
         }
+      } 
+      else {
+        console.log('missing com.amazonaws.ecs.task-arn label from metadata');
       }
+    } 
+    else {
+      console.log('ECS_CONTAINER_METADATA_URI is missing from environment, use random nodeid.');
     }
-    console.log('ECS_CONTAINER_METADATA_URI is missing from environment, use random nodeid.');
   }
   catch(e) {
     debug('needle error:', e.message);
