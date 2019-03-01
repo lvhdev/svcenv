@@ -14,6 +14,19 @@ $ npm install @lifeio/svcenv (run with npx)
 ## Usage
 This utility is primarily intended for use with ECS task definitions to initialize a microservice container.  
 
+```
+
+  Usage: svcenv [OPTIONS] ServiceName SecretId [outputDir]
+  
+  Options:
+      -e,  --envFile      Name of envFile to dump in outputDir (default = ./.env)
+      -h,  --help         Display help screen
+      -p,  --profile      If using local ~/.aws credentials
+      -r,  --region       Region to use for secrets lookup
+      -v,  --version      Display version
+
+```
+
 ### Environment
 It will pull secrets stored in [AWS Secerets Manager](https://aws.amazon.com/secrets-manager/) under the SecretId key and dump them to an env file (default=./.env).  
 
@@ -34,16 +47,3 @@ The utility can authenticate via IAM, or if running outside of AWS via authentic
 
 ### DEBUGGING
 The utilty uses the [debug](https://www.npmjs.com/package/debug) module.  To turn on debugging add ```DEBUG=*``` to the command line or your environment.
-
-```
-
-  Usage: svcenv [OPTIONS] ServiceName SecretId [outputDir]
-  
-  Options:
-      -e,  --envFile      Name of envFile to dump in outputDir (default = ./.env)
-      -h,  --help         Display help screen
-      -p,  --profile      If using local ~/.aws credentials
-      -r,  --region       Region to use for secrets lookup
-      -v,  --version      Display version
-
-```
