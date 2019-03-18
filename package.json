@@ -1,6 +1,6 @@
 {
   "name": "@lifeio/svcenv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple cli for prepping the env for a run of a life.io service.",
   "engines": {
     "node": ">=8.x.x",
