@@ -194,11 +194,11 @@ async function getNodeId(serviceName) {
         if (m[1]) {
           return `${serviceName}-${m[1].substr(0, 8)}`;
         }
-      } 
+      }
       else {
         console.log('missing com.amazonaws.ecs.task-arn label from metadata');
       }
-    } 
+    }
     else {
       console.log('ECS_CONTAINER_METADATA_URI is missing from environment, use random nodeid.');
     }
