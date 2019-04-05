@@ -190,7 +190,7 @@ async function getNodeId(serviceName) {
       debug('getNodeId metadata:', r.body);
       const arn = r.body && r.body.Labels && r.body.Labels['com.amazonaws.ecs.task-arn'];
       if ( arn ){
-        const m = arn.match(/arn:aws:ecs:.*task\/(.*)$/);
+        const m = arn.match(/arn:aws:ecs:.*task.*\/(.*)$/);
         if (m[1]) {
           return `${serviceName}-${m[1].substr(0, 8)}`;
         }

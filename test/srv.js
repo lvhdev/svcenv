@@ -6,7 +6,9 @@ const metadata = JSON.stringify({
   'Labels': {
     'com.amazonaws.ecs.cluster': 'default',
     'com.amazonaws.ecs.container-name': 'metadaa',
+
     'com.amazonaws.ecs.task-arn': 'arn:aws:ecs:us-west-2:012345678910:task/2b88376d-aba3-4950-9ddf-bcb0f388a40c',
+    'xxcom.amazonaws.ecs.task-arn': 'arn:aws:ecs:us-east-1:151645357890:task/cl0403-cluster-dev/1835da0edc97403dbbfe519127968bb5',
   },
   'ContainerID': '98e44444008169587b826b4cd76c6732e5899747e753af1e19a35db64f9e9c32',
 	'ContainerInstanceARN':'arn:aws:ecs:us-west-2:012345678910:container-instance/1f73d099-b914-411c-a9ff-81633b7741dd',
