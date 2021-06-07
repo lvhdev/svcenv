@@ -3,8 +3,8 @@
   "version": "1.1.0",
   "description": "Simple cli for prepping the env for a run of a life.io service.",
   "engines": {
-    "node": ">= 8.x.x <=12.x.x",
-    "npm": "~6.13.4"
+    "node": ">=12",
+    "npm": "^7.6.3"
   },
   "main": "index.js",
   "bin": {
@@ -28,7 +28,7 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^5.14.1",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.19.4"
   },
   "dependencies": {
     "aws-sdk": "^2.412.0",
