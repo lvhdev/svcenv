@@ -28,7 +28,7 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^5.14.1",
-    "nodemon": "^1.19.4"
+    "nodemon": "^2.0.22"
   },
   "dependencies": {
     "aws-sdk": "^2.412.0",
